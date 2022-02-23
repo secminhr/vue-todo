@@ -1,7 +1,7 @@
 const app = {
 	data() {
 		return {
-			items: JSON.parse(localStorage.getItem('todolist'))
+			items: JSON.parse(localStorage.getItem('todolist')) ?? []
 		}
 	},
 	computed: {
