@@ -1,0 +1,23 @@
+<!DOCTYPE>
+<html>
+	<head>
+		<title>Vue ToDo List</title>
+		<!-- <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+		<link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+		<script defer src="https://code.getmdl.io/1.3 .0/material.min.js"></script> -->
+		<script src="https://unpkg.com/vue@next"></script>
+	</head>
+	<body style="margin: 16px;">
+		<h1>ToDo List</h1>
+		<p>Tasks: {{ items.length }} </p>
+		<p>Tasks done: {{ doneItems.length }}</p>
+		<button @click="deleteAll">remove all tasks</button>
+		<button v-if="doneItems.length != 0" @click="deleteDone">Remove done tasks</button>
+		<new-task-row @on-add="addItem"> </new-task-row>
+		<div v-for="item in items">
+			<task-item :item="item" @on-delete="deleteItem"></task-item>
+		</div>
+
+		<script src="./app.js"></script>
+	</body>
+</html>
