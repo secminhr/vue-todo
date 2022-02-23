@@ -85,7 +85,7 @@ const taskItem = {
 }
 
 
-Vue.createApp(app)
-	.component('new-task-row', newTaskRow)
+const vm = Vue.createApp(app)
+vm.component('new-task-row', newTaskRow)
 	.component('task-item', taskItem)
 	.mount('body');
